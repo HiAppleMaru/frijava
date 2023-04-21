@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HELLO</title>
+</head>
+<body>
+	<h1>집에 갈끄야!</h1>
+	<form action="/exweb/form.do" method="post">
+		주문할 상품
+			<select name="prod">
+			<option value="shoes">신발</option>
+			<option value="watch">시계</option>
+			<option value="furniture">가구</option>
+		</select>
+		<br /> 
+		좋아하는 과일 : 
+			<input type="radio" name="fruit" value="berry" /> 딸기
+			<input type="radio" name="fruit" value="peach" /> 복숭아
+			<input type="radio" name="fruit" value="orange" /> 귤
+		<br />
+		음료 : 
+			<input type="checkbox" name="drink" value="coffee"/> 커피
+			<input type="checkbox" name="drink" value="greentea"/> 녹차
+			<input type="checkbox" name="drink" value="balcktea"/> 홍차
+			<br />
+			<input type="submit" />
+	</form> 
+<!-- submit 버튼을 클릭하면, 
+	선택한 상품의 사진
+	선택한 과일의 이름("berry", "peach", "orange")
+	선택한 음료의 이름들 ("coffee", "greentea", "blacktea")
+	이 화면에 출력되도록 FormServlet 클래스를 변경하세요.
+	상품사진의 주소는 
+	신발은 https://api.lorem.space/image/shoes?w=150&h=150
+	시계는 https://api.lorem.space/image/watch?w=150&h=150
+	가구는 https://api.lorem.space/image/furniture?w=150&h=150 -->
+	
+	<h2>회원추가</h2>	
+	<form action="/exweb/member/add.do" method="post">
+		아이디: <input type="text" name="memId" value=""/><br>
+		비밀번호: <input type="password" name="memPass" value=""/><br>
+		이름: <input type="text" name="memName" value=""/><br>
+		포인트: <input type="number" name="memPoint" value="0"/><br>
+		<input type="submit" />
+	</form> 
+<!--1. 	submit 버튼을 클릭하면 입력한 회원정보가 데이터베이스에 추가되도록
+		MemAddServlet을 변경하세요. 
+	2.  실행결과 "1명의 회원 추가" 메시지가 이클립스 콘솔이 아닌
+		웹 브라우저 화면에 출력되도록 MemAddServlet을 변경하세요.-->
+
+	<h2>세션,서블릿컨텍스트,쿠키 저장</h2>	
+	<form action="/exweb/save" method="get"> 
+		닉네임: <input type="text" name="nn" value=""/><br>
+		<input type="checkbox" name="rem" value="on"/>기억하기<br>
+		<input type="submit" /> 
+	</form>
+	
+</body>
+</html>
+
+
